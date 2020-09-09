@@ -123,8 +123,8 @@ class InputBox {
   constructor() {
     this.createTextArea();
     this.createDownloadButton();
-    this.createSketchButton();
-    this.createPhotoButton();
+    // this.createSketchButton();
+    // this.createPhotoButton();
   }
 
   createDownloadButton() {
