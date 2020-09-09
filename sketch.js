@@ -21,7 +21,7 @@ function draw() {
   translate(50, 50);
   logo.draw();
   pop();
-  noLoop();
+  // noLoop();
   // saveLogo();
 }
 
@@ -158,6 +158,6 @@ class InputBox {
     const upper = input.toUpperCase();
     const lines = upper.split("\n");
     logoText = lines;
-    draw();
+    // draw();
   }
 }
