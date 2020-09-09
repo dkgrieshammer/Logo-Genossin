@@ -9,4 +9,4 @@ First Version of a Logo Generator for [Trink-Genoss:e](https://trink-genosse.de/
 - [ ] Allow Upload of Photo
 - [ ] Allow use of Webcam to take a picture
 
-Created with <3 & CodeSandbox
+Created with ❤️ P5, P5svg & CodeSandbox
