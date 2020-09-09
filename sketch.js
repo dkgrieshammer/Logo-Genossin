@@ -2,7 +2,7 @@
 
 let input;
 let logo;
-let logoText = ["TRINK —", "GENOSSE", "LATTEN", "SCHWESTERN"];
+let logoText = ["TRINK —", "GENOSSIN", "LATTEN", "BRUDER"];
 
 function setup() {
   let density = displayDensity();
@@ -147,7 +147,7 @@ class InputBox {
     area.attribute("rows", "5");
     area.attribute("cols", "30");
     area.elt.placeholder = "hint text";
-    area.elt.value = "Trink — \nGenosse \nLatten \nSchwestern";
+    area.elt.value = "Trink — \nGenossin \nLatten \nBruder";
     area.position(50, 400, "absolute");
     area.input(this.onInput);
     this.area = area;
