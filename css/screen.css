@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.p5Canvas {
+  /* position: relative; */
+}
+
+svg {
+  /* position: relative; */
+  /* width: auto !important; */
+  /* height: 100% !important; */
+}
