@@ -10,11 +10,18 @@ body {
   top: 0;
 }
 
+#defaultCanvas0 {
+  /* letter-spacing: 1rem; */
+}
+
+
+
 .p5Canvas {
   /* position: relative; */
 }
 
 svg {
+  /* letter-spacing: 2rem; */
   /* position: relative; */
   /* width: auto !important; */
   /* height: 100% !important; */

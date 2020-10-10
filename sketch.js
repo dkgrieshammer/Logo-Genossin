@@ -3,13 +3,16 @@
 let input;
 let logo;
 let logoText = ["TRINK —", "GENOSSIN", "LATTEN", "BRUDER"];
+let ctx; //rendering context as ref
 
 function setup() {
   let density = displayDensity();
   console.log("dens ", density);
-  if (density > 1.5) pixelDensity(1);
-  createCanvas(windowWidth, windowHeight, SVG);
+  pixelDensity(1);
+  let canvas = createCanvas(windowWidth, windowHeight, SVG);
+  ctx = canvas.drawingContext
   textFont("Arial");
+
   input = new InputBox();
   logo = new Logo();
   // translate(50, 50);
@@ -31,14 +34,14 @@ windowResized = function () {
 };
 
 function saveLogo() {
-  save();
+  save("Logo-Genossin.svg");
 }
 
 class Logo {
   divider = 24; //its 24 lines inside the rectangle according to the CI manual
   baseSize = 240; //either 240 or 360 to have pixel perfect steps
   sPos = createVector(0, 0);
-  ePos = createVector(this.baseSize, this.baseSize);
+  ePos = createVector(this.baseSize * 1.0157, this.baseSize);
   lineWidth = 10;
 
   constructor() {
@@ -81,10 +84,20 @@ class Logo {
     fill(0);
     noStroke();
     textStyle(BOLD);
+    // const tmpSvg = select('svg')
+    // tmpSvg.elt.setAttribute('kerning', '0.5rem')
+    // console.log(tmpSvg.elt)
     textSize(70);
     for (let i = 0; i < newText.length; i++) {
       const yPos = (i + 1) * 3 * this.baseGrid;
-      text(newText[i], sPos, yPos);
+      let shift = 0
+      // text(newText[i], sPos, yPos);
+      for(let l = 0; l < newText[i].length; l ++) {
+        const letter = newText[i][l]
+        text(letter, sPos + shift, yPos)
+        shift += textWidth(letter) + 7
+      }
+      console.log(newText[i][0])
     }
   }
 
